@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <style type = "text/css">
+
+      header{
+        padding-bottom: 30px;
+        text-align: center;
+        background-size: cover;
+        color: white;
+      }
+      body {
+        color: white;
+        background-color: rgba(26, 0, 0, 1);   
+      }
+      h1{
+        text-align: center;
+        font-size: 40px;
+        padding: 20px 20px 20px 20px;
+      }
+      li {
+        display: inline;
+      }
+      a{
+        padding-top: 20px;
+        color:  black;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      a:hover {
+        color: rgb(187, 58, 58);
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      p{
+        text-align: left;
+        font-size: 18px;
+      }
+      label{
+        color: black;
+      }
+      img {
+        height: 100px;
+        width: 100px;
+      }
+      input[type=text], select, textarea {
+        font-size: 16px;
+        width: 100%; 
+        padding: 12px;  
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        box-sizing: border-box; 
+        margin-top: 6px; 
+        margin-bottom: 16px; 
+        resize: vertical 
+      }
+
+      input[type=submit] {
+        background-color: #510909;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+
+      input[type=submit]:hover {
+        background-color: #a51e1e;
+      }
+      
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 40px;
+      }
+      
+      table {
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px;
+      }
+      td {
+        padding: 0 15px;
+      }
+      h3{
+        color:black;
+        text-align: center;
+        font-size: 20px;
+      }
+      .container_3{
+        display:flex;
+        align-items: center;
+      }
+      .box4{
+        flex: 2;
+        padding-right: 130px;
+      }
+      .box3{
+        flex: 0.2;
+        height:fit-content;
+        padding:10px;
+        margin-left: 60px;
+        background-color: #ccc;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header> 
+      <div class="container_3">
+        <div class="box3">
+          <li><a href="index.html">На головну</a></li>
+        </div>
+        <div class="box4">
+          <h1>Контактна сторінка</h1>
+        </div>
+      </div>
+      <h2>Власник</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <p>ПІБ:</p>
+              <p>E-mail:</p>
+              <p>Номер телефона:</p>
+            </td>
+            <td>
+              <p>Чернецька Даяна Павлівна</p>
+              <p>maycorespon@gmail.com</p>
+              <p>+380502689624</p>
+            </td>
+            <td>
+              <img src="https://img.freepik.com/premium-vector/portrait-caucasian-woman-avatar-female-person-vector-icon-adult-flat-style-headshot_605517-26.jpg?w=2000">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </header>
+    <div class="container">
+      <form>
+        <h3>Надішліть нам повідомлення: </h3>
+        <label for="fname">Ім'я</label>
+        <input type="text" id="fname" name="firstname" placeholder="Ваше ім'я..">
+    
+        <label for="lname">Прізвище</label>
+        <input type="text" id="lname" name="lastname" placeholder="Ваше прізвище..">
+    
+        <label for="country">Ваше положення</label>
+        <select id="country" name="country">
+          <option value="europe">Європа</option>
+          <option value="america">Америка</option>
+          <option value="asia">Азія</option>
+        </select>
+    
+        <label for="subject">Повідомлення</label>
+        <textarea id="subject" name="subject" placeholder="Напишіть щось.." style="height:200px"></textarea>
+    
+        <input type="submit" value="Надіслати">
+    
+      </form>
+    </div>
+    <script>
+      
+      const form=document.querySelector('form')
+      form.addEventListener('submit', (e) =>{
+        e.preventDefault();
+        const fd = new FormData(form);
+        const obj = Object.fromEntries(fd)
+        let fname = document.getElementById("fname").value;
+
+        const json = JSON.stringify(obj);
+        localStorage.setItem(fname, json);
+        window.location.reload();
+        alert('Дякуємо за ваше повідомлення (^.^)')
+      });
+
+    </script>
+  </body>
+</html>

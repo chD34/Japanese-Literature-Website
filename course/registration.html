@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgba(26, 0, 0, 1);
+        }
+
+        #form {
+            width: 300px;
+            margin: 10vh auto 0 auto;
+            padding: 20px;
+            background-color: whitesmoke;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        #form h1 {
+            color: #0f2027;
+            text-align: center;
+            padding-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        #form button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            color: white;
+            background-color: rgb(83, 27, 27);
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .input-control {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .input-control input {
+            border: 2px solid #f0f0f0;
+        	border-radius: 4px;
+        	display: block;
+        	font-size: 12px;
+        	padding: 10px;
+        	width: 100%;
+        }
+        
+        .input-control input:focus {
+            outline: 0;
+        }
+        
+        .input-control.success input {
+            border-color: #09c372;
+        }
+        
+        .input-control.error input {
+            border-color: #ff3860;
+        }
+        
+        .input-control .error {
+            color: #ff3860;
+            font-size: 9px;
+            height: 13px;
+        }
+        .container{
+          display:flex;
+          align-items: center;
+          padding-top: 30px;
+          width: auto;
+        }
+        
+        .box{
+          text-align: center;
+          flex: 0.2;
+          height:fit-content;
+          padding:10px;
+          margin-left: 60px;
+          background-color: #ccc;
+        }
+        li {
+        display: inline;
+         }
+         a{
+           padding-top: 20px;
+           color:  black;
+           text-decoration: none;
+           font-size: 22px;
+           font-weight: bold;
+         }
+         a:hover {
+           color: rgb(187, 58, 58);
+           background-color: transparent;
+           text-decoration: underline;
+         }
+
+        #form label {
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+          <li><a href="index.html">На головну</a></li>
+        </div>
+    </div>
+    <div class="container_">
+        <form id = 'form' onsubmit="signup()">
+            <h1>Реєстрація</h1>
+            <div class="input-control">
+                <label for="username">Ім'я користувача</label>
+                <input id="username" required name="username" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" required name="email" type="email">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Пароль</label>
+                <input id="password" required name="password" type="password">
+                <div class="error"></div>
+            </div>
+            <button type="submit">Зареєструватись</button>
+        </form>
+    </div>
+
+<script type ="text/javascript">
+
+    function signup(e){
+    event.preventDefault();
+
+    var email = document.getElementById("email").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    var user = {
+        email: email,
+        username: username,
+        password: password,
+    };
+
+
+    if(password.length < 8){
+        alert('Пароль має містити принаймні 8 символів');
+    }
+    else if(JSON.parse(localStorage.getItem(email)) != null){
+        alert('Користувач з таким email уже зареєстрований!');
+    }
+    else{
+        var json = JSON.stringify(user);
+        localStorage.setItem(email, json);
+        alert('Реєстрація пройшла успішно!');
+        window.location.href = 'enter.html';
+      }
+    }
+</script>
+</body>
+</html>

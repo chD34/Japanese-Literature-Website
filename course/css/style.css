@@ -1,0 +1,116 @@
+body {
+  color: white;
+  background-image: linear-gradient(to bottom, rgba(26, 0, 0, 1), rgba(26, 0, 0, 1));    
+  
+}
+header{    
+  padding-left: 0px;
+  text-align: center;
+  background-image: linear-gradient(to top, #efeded, rgb(205, 201, 201));
+  background-size: cover;
+  color: black;
+  }
+a{
+  color: black;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+a:hover {
+  color: rgb(83, 23, 23);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+h1{
+  font-size: 60px;
+  padding: 60px 20px 60px 0px;
+}
+ul{
+  background: rgba(111, 95, 95, 0.1);
+}
+li{
+  display: inline;
+  padding: 0px 17px 0px 17px;
+}
+a:link, a:visited {
+  color:rgb(83, 23, 23);
+}
+
+a.active:link, a.active:visited{
+  background-color: rgba(44, 28, 21, 0.178);
+}
+
+.container_1{
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 40px;
+  line-height: 2;
+}
+.container_2{
+  margin-left: 100px;
+  margin-right: 100px;
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgb(215, 180, 180);
+  background-color: rgb(214, 214, 217);
+}
+.box_1{
+  text-align: center;
+  background-color: rgb(214, 214, 217);
+  color: black;
+}
+.box_2{
+  padding: 10px;
+  flex-basis: 20px;
+  flex-grow: 2;
+}
+.box_3{
+  padding: 10px;
+  flex-basis: 20px;
+}
+.picture{
+  height: 300px;
+  width: 320px;
+  padding-right: 20px;
+}
+.picture_1{
+  height: 180px;
+  width: 320px;
+  padding-right: 20px;
+}
+.picture_2{
+  height: 450px;
+  width: 320px;
+  padding-right: 20px;
+}
+.box_4{
+  color: black;
+  text-align: center;
+  padding: 10px;
+  flex-basis: 20px;
+  flex-grow: 2;
+}
+
+p{
+  font-size: 18px;
+}
+
+h4{
+  font-size: 18px;
+}
+
+.space{
+  padding-top: 40px;
+}
+.space_2{
+  padding-right: 40px;
+  text-align: left;
+}
+.hidden{
+  display: none;
+}
+.visible{
+  display: contents;
+}
