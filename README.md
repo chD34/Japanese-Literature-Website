@@ -1,1 +1,5 @@
-Фронтенд проект реалзізації сайту присвяченого японській літературі. Містить реалізацію віджета прогнозу погоди реалізованого з використанням React.
+# Japanise Literature Website
+
+Frontend project for the implementation of a site dedicated to Japanese literature. 
+
+Contains an implementation of a weather forecast widget implemented using React.
